@@ -14,7 +14,7 @@
     <div  v-show="page=='location'">
       <div v-on:click="gotoLocationD(id, title)" class=" m-5 relative bg-[#5DFF18] p-4 rounded-lg " >
         <div class="w-full bg-white border-2 border-black drop-shadow-lg  rounded-lg flex-col flex">
-          <span  class="text-2xl py-2   border-2 w-full rounded-lg  font-extrabold">{{title}}</span>
+          <span  class="text-2xl py-2 h-32	p-4	flex justify-center items-center border-2 w-full rounded-lg  font-extrabold">{{title}}</span>
           <span  class="leading-loose text-xl  bg-zinc-800	text-white font-bold">{{status}}</span>
           <span class="leading-loose"><strong>Dimension :</strong> {{species}}</span>
         </div>
@@ -24,7 +24,7 @@
     <div  v-show="page=='episode'">
       <div  class=" m-5 relative bg-[#5DFF18] p-4 rounded-lg " >
         <div class="w-full bg-white border-2 border-black drop-shadow-lg  rounded-lg flex-col flex">
-          <span  class="text-2xl py-2   border-2 w-full rounded-lg  font-extrabold">{{title}}</span>
+          <span  class="text-2xl py-2 h-32	p-4	flex justify-center items-center border-2 w-full rounded-lg  font-extrabold">{{title}}</span>
           <span  class="leading-loose text-xl  bg-zinc-800	text-white font-bold">{{status}}</span>
           <span class="leading-loose"><strong>Date :</strong> {{species}}</span>
         </div>

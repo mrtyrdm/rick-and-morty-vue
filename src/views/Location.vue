@@ -1,7 +1,7 @@
 <template>
   <div class="max-w-screen-2xl mx-auto  flex flex-wrap">
       <Card page="location" v-for="item in list" :title="item.name" :key="item.id" :id="item.id" :species="item.dimension" :status="item.type"></Card>
-      <Pagition @item="item=$event" :item="item" :pages="pagition"/>
+      <Pagition @item="item=$event" :item="item" :pages="pagition" :firstpage="[1,2,3,4,5]"/>
   </div>
 </template>
 

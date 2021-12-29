@@ -17,7 +17,6 @@ export default {
   },
   methods : {
     testFunction : function(event){
-      this.item = event;
       this.$emit('item', event);
     },
     filtersTest : function (item) {
@@ -34,14 +33,17 @@ export default {
   watch : {
     item : function () {
       this.filtersTest(this.item);
-    }
+    },
+  },
+  created() {
+
+    this.page = this.firstpage;
+
   },
   components: {
     Button
   },
-  props : {
-    pages : Number,
-    item : Number
-  }
+  props : ['pages', 'item', 'status', 'species', 'firstpage']
+
 }
 </script>
