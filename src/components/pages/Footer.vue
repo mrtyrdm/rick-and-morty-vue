@@ -1,6 +1,6 @@
 <template>
-  <fotoer>
-      <p class="text-white">test</p>
+  <fotoer class="">
+      <p class="text-white">Footer</p>
   </fotoer>
 </template>
 

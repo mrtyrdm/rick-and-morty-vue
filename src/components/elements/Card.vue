@@ -1,5 +1,5 @@
 <template>
-  <div class=" text-black w-1/2 md:w-3/12">
+  <div class=" text-black w-full xl:w-3/12 lg:w-2/6 md:w-1/2   ">
     <div v-on:click="gotoCharsertD(id)" v-show="page=='character'" class=" m-5 relative">
       <img  class="w-full rounded-t-lg bg-red" v-lazy="images" alt="">
       <div class="absolute bottom-[5rem] right-1 w-full  flex justify-center">
