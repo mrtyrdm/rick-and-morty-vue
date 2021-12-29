@@ -1,6 +1,6 @@
 <template>
   <div class=" text-black w-1/2 md:w-3/12">
-    <div v-show="page=='character'" class=" m-5 relative">
+    <div v-on:click="gotoCharsertD(id)" v-show="page=='character'" class=" m-5 relative">
       <img  class="w-full rounded-t-lg bg-red" v-lazy="images" alt="">
       <div class="absolute bottom-[5rem] right-1 w-full  flex justify-center">
         <span :class="[getStatus]" class=" font-bold border-2 border-black  w-40   py-2 rounded-full">{{status}}</span>
@@ -22,7 +22,7 @@
     </div>
 
     <div  v-show="page=='episode'">
-      <div  class=" m-5 relative bg-[#5DFF18] p-4 rounded-lg " >
+      <div :class="[getStatus]"  class=" m-5 relative  p-4 rounded-lg " >
         <div class="w-full bg-white border-2 border-black drop-shadow-lg  rounded-lg flex-col flex">
           <span  class="text-2xl py-2 h-32	p-4	flex justify-center items-center border-2 w-full rounded-lg  font-extrabold">{{title}}</span>
           <span  class="leading-loose text-xl  bg-zinc-800	text-white font-bold">{{status}}</span>
@@ -52,6 +52,9 @@
     methods : {
       gotoLocationD(event, name){
         this.$router.push({ name: 'Location Detail', params:{id:event, name:name} })
+      },
+      gotoCharsertD(event){
+        this.$router.push({ name: 'Character Detail', params:{id:event} })
       }
     },
     props : ['images', 'title', 'status' , 'species', 'page', 'id' ]

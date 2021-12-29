@@ -1,6 +1,6 @@
 <template>
   <div class="max-w-screen-2xl mx-auto  flex flex-wrap">
-    <Card page="character"  v-for="item in list" :key="item.id" :images="item.image" :title="item.name" :status="item.status" :species="item.species" />
+    <Card page="character"  v-for="item in list" :key="item.id" :id="item.id" :images="item.image" :title="item.name" :status="item.status" :species="item.species" />
     <Pagition @item="item=$event" :pages="pagition" :item="item" :firstpage="[1,2,3,4,5]"></Pagition>
   </div>
 </template>
