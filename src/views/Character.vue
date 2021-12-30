@@ -1,6 +1,7 @@
 <template>
   <div class="max-w-screen-2xl mx-auto  flex flex-wrap">
-    <Card page="character"  v-for="item in list" :key="item.id" :id="item.id" :images="item.image" :title="item.name" :status="item.status" :species="item.species" />
+    <input class="w-full rounded-lg p-4 m-4" placeholder="Search Character Name .. " type="text" v-model="search">
+    <Card page="character"  v-for="item in filterSearch" :key="item.id" :id="item.id" :images="item.image" :title="item.name" :status="item.status" :species="item.species" />
     <Pagition @item="item=$event" :pages="pagition" :item="item" :firstpage="[1,2,3,4,5]"></Pagition>
   </div>
 </template>
@@ -9,7 +10,7 @@
 
 import axios from "axios";
 import Card from "../components/elements/Card";
-import Pagition from "../components/elements/Pagition";
+import Pagition from  "../components/elements/Pagition";
 export default {
   name: 'character',
   data(){
@@ -17,6 +18,7 @@ export default {
       item : 1,
       list : null,
       pagition : null,
+      search: ""
     }
   },
   methods: {
@@ -30,7 +32,15 @@ export default {
 
   },
   computed : {
-
+    filterSearch : function (){
+     if (this.search){
+       return this.list.filter(lists=> {
+         return  lists.name.toLowerCase().includes(this.search.toLowerCase());
+       })
+     }else {
+       return this.list;
+     }
+    }
   },
   watch : {
     item : function (){
